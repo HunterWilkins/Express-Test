@@ -1,6 +1,7 @@
 // Dependencies
 // ===========================================================
 const express = require('express');
+const path = require("path");
 
 const app = express();
 const PORT = 3001;
@@ -34,7 +35,7 @@ const characters = [
 // Routes
 // ===========================================================
 app.get('/', (req, res) => {
-  res.send('Welcome to the Star Wars Page!');
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // Create a GET route `/api/characters` that returns all of the characters
